@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class arr
 
 {
@@ -138,13 +140,15 @@ public class arr
 	                System.out.println("]");
 	                System.out.println();
 
-	                System.out.print("{ 초기 배열 값 : " );
+	                System.out.print("{ 정렬 전 : " );
 	                for(i = 0 ; i < charArr.length; i++){
                         System.out.print(charArr[i] + " ");
                     }
 	                System.out.println();
+                    Arrays.sort(charArr);
 
-	                System.out.print("이동 후 배열 값 : ");
+
+	                System.out.print("정렬 후 :  ");
 	                for(i = 0 ; i < charArr.length; i++){
                         System.out.print(charArr[i] + " ");
                     }
