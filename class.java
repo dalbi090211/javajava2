@@ -1,35 +1,45 @@
-public class class {
-    public static java.util.Scanner sc  = new java.util.Scanner(System.in);
-    public static class Solider{
-        String gender, address, name;
-        int height, weight, grade, age; 
+class Employee{
         
-        //생성자 함수
-        Solider(String name, int age, String gender, int height, int weight, int grade, String address){      //생성자 함수
-            this.name = name;
-            this.age = age;
-            this.gender = gender;
-            this.height = height;
-            this.weight = weight;
-            this.grade = grade;
-            this.address = address;
-        }
-
+    private String name;
+    private int age, salary; 
+    private char team, gender;
+    
+    public Employee(String name, int age, int salary, char team, char gender){ //생성자
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+        this.team = team;
+        this.gender = gender;
     }
-
-
-    public static void main(String args[]){
-        Solider[] soliders;
-        soliders = new Solider[5];
-        soliders[0] = new Solider("이재혁", 22, "남", 170, 55, 1, "서울특별시");
-        soliders[1] = new Solider("김남운", 21, "남", 150, 75, 3, "인천광역시");
-        soliders[2] = new Solider("유지민", 22, "여", 167, 55, 4, "고양시");
-        soliders[3] = new Solider("임석희", 22, "여", 180, 65, 4, "춘천시");
-        soliders[4] = new Solider("유영인", 23, "남", 173, 76, 2, "부산광역시");
-        for(int i = 0 ; i < 5; i ++){
-            for(int j : soliders[i]){
-                
-            }
-        }
+    
+    public Employee(){ //생성자
+        this("홍길동", 20, 20000, 'q', 'm');
     }
+    
+    public void print_information(){
+        System.out.println("[ 이름 : " + name + ", 나이 :" + age + ", 월급 :" + salary + ", 팀 :" + team + ", 성 :" + gender + " ]");
+    }
+    
+    public char get_gender(Employee person){
+        return person.gender;
+    }
+    
+    
+}
+
+public class Main
+{
+public static void main(String[] args) {
+    Employee[] employ = new Employee[10];
+    employ[0] = new Employee("카리나", 20, 50000, 'a', 'w');
+    employ[1] = new Employee("아이유", 30, 100000, 'b', 'w');
+    employ[2] = new Employee("윈터", 20, 50000, 'a', 'w');
+    employ[3] = new Employee("김병찬", 22, 4000, 's', 'm');
+    employ[4] = new Employee("이건희", 22, 3000, 's', 'm');
+    employ[5] = new Employee();
+    for(int i =0; i < employ.length ; i++){
+        employ[i].print_information();
+    }
+    
+}
 }
